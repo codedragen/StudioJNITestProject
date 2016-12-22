@@ -6,10 +6,12 @@ import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+import com.example.cl.R;
 import com.example.cl.model.Model;
 import com.example.cl.model.bean.UserInfo;
-import com.example.cl.studiojnitestproject.R;
+
 import com.hyphenate.chat.EMClient;
+
 
 public class SplashActivity extends AppCompatActivity {
 
@@ -35,6 +37,8 @@ public class SplashActivity extends AppCompatActivity {
                        login();
                    }else{
                        Model.getInstance().loginSuccess(user);
+                       Intent intent = new Intent(SplashActivity.this, MainActivity.class);
+                       startActivity(intent);
                    }
                 }else{
                     login();
@@ -53,6 +57,7 @@ public class SplashActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
+        handler.sendEmptyMessageDelayed(0,2000);
     }
 
 

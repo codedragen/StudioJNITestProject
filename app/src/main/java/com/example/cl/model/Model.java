@@ -54,6 +54,7 @@ public class Model {
 
         if(dbManager != null) {
             dbManager.close();
+            dbManager=null;
         }
 
         dbManager = new DBManager(mContext, user.getName());
